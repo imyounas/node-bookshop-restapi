@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  mongo-dby:
+    image: mongo:latest
+    container_name: mongodb-iy2
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE= mybookshop
+      - MONGO_INITDB_ROOT_USERNAME= sa
+      - MONGO_INITDB_ROOT_PASSWORD= ABC123ssi
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./home/mongodb:/home/mongodb
+      - db_datax4:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongox.js:ro
+
+volumes:
+  db_datax4:
+    driver: local
