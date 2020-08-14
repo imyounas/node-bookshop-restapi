@@ -9,7 +9,7 @@ class BookController {
 
     public getBooks = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const allBooks: Book[] = await this.bookService.getAll();
+            const allBooks: BookDto[] = await this.bookService.getAll();
             res.status(200).json(allBooks);
         } catch (error) {
             next(error);
@@ -21,7 +21,7 @@ class BookController {
         const id: string = req.params.id;
 
         try {
-            const findBook: Book | null = await this.bookService.getById(id);
+            const findBook: BookDto | null = await this.bookService.getById(id);
             res.status(200).json(findBook);
         } catch (error) {
             next(error);
@@ -33,7 +33,7 @@ class BookController {
         const BookDto: BookDto = req.body;
 
         try {
-            const book: Book = await this.bookService.create(BookDto);
+            const book: BookDto = await this.bookService.create(BookDto);
             res.status(201).json(book);
         } catch (error) {
             next(error);
@@ -46,7 +46,7 @@ class BookController {
         const BookDto: BookDto = req.body;
 
         try {
-            const updateBookData: Book | null = await this.bookService.update(id, BookDto);
+            const updateBookData: BookDto | null = await this.bookService.update(id, BookDto);
             res.status(200).json(updateBookData);
         } catch (error) {
             next(error);

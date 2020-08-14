@@ -7,8 +7,8 @@ services:
     restart: always
     environment:
       - MONGO_INITDB_DATABASE= mybookshop
-      - MONGO_INITDB_ROOT_USERNAME= sa
-      - MONGO_INITDB_ROOT_PASSWORD= ABC123ssi
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=ABC123ssi
     ports:
       - "27017:27017"
     volumes:

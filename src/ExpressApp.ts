@@ -24,12 +24,12 @@ class ExpressApp {
 
   constructor(routes: IRoutes[]) {
     this.expApp = express();
-    this.port = process.env.SERVER_PORT || 3000;
+    this.port = process.env.SERVER_PORT || 4000;
     this.isProdEnv = process.env.NODE_ENV === "production" ? true : false;
     this.mongoUser = process.env.MONGO_USER || "sa";
     this.mongoPassword = process.env.MONGO_PASSWORD || "ABC123ssi";
     this.mongoUrl = process.env.MONGO_PATH || "@localhost:27017";
-    this.mongoDB = process.env.MONGO_DATABASE || "ProductsDB";
+    this.mongoDB = process.env.MONGO_DATABASE || "mybookshop";
 
     this.connectToDatabase();
     this.initializeMiddlewares();

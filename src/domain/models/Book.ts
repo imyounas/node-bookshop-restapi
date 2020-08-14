@@ -2,9 +2,9 @@ import * as mongoose from "mongoose";
 
 export interface Book {
     _id: string;
-    name?: string;
-    isbn?: string;
-    authorId: String;
+    name: string;
+    isbn: string;
+    authorId: string;
 
 }
 

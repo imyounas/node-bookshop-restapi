@@ -2,8 +2,8 @@ import * as mongoose from "mongoose";
 
 export interface Author {
     _id: string;
-    lastName?: string;
-    firstName?: string;
+    lastName: string;
+    firstName: string;
 
 }
 

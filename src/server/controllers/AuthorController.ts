@@ -10,7 +10,7 @@ class AuthorController {
 
   public getAuthors = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const allAuthors: Author[] = await this.authorService.getAll();
+      const allAuthors: AuthorDto[] = await this.authorService.getAll();
       res.status(200).json(allAuthors);
     } catch (error) {
       next(error);
@@ -31,7 +31,7 @@ class AuthorController {
     const id: string = req.params.id;
 
     try {
-      const findAuthor: Author | null = await this.authorService.getById(id);
+      const findAuthor: AuthorDto | null = await this.authorService.getById(id);
       res.status(200).json(findAuthor);
     } catch (error) {
       next(error);
@@ -43,7 +43,7 @@ class AuthorController {
     const authorDto: AuthorDto = req.body;
 
     try {
-      const author: Author = await this.authorService.create(authorDto);
+      const author: AuthorDto = await this.authorService.create(authorDto);
       res.status(201).json(author);
     } catch (error) {
       next(error);
@@ -56,7 +56,7 @@ class AuthorController {
     const authorDto: AuthorDto = req.body;
 
     try {
-      const updateAuthorData: Author | null = await this.authorService.update(id, authorDto);
+      const updateAuthorData: AuthorDto | null = await this.authorService.update(id, authorDto);
       res.status(200).json(updateAuthorData);
     } catch (error) {
       next(error);
