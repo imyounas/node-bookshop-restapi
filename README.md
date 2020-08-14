@@ -1,4 +1,4 @@
-### Node Rest API
+# My Book Shop - Node Rest API
 
 - This Node App uses TypeScript, Express and Mongo DB and runs on Port 4000
 - Please make sure to change the MongoDB connection settings from here e
